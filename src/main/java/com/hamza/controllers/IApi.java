@@ -44,6 +44,7 @@ public interface IApi {
 
     @ApiOperation(
             value = "Retrieve an URL by its short form",
+            notes = "this call will not redirect, use /short_url/{short_url} instead of /api/short_url/{short_url} to test redirection",
             httpMethod = "GET",
             response = UrlGetDto.class,
             protocols = "https,http"
