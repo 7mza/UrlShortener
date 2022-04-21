@@ -1,0 +1,12 @@
+---
+applications:
+  - name: url-shortener
+    memory: 512M
+    routes:
+      - route: bhamza.eu-gb.mybluemix.net
+    path: target/UrlShortener-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - https://github.com/cloudfoundry/java-buildpack.git
+    env:
+      SPRING_PROFILES_ACTIVE: default
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 25 } }'
